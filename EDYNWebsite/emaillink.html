@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Us An Email</title>
+    <link rel="stylesheet" href="emaillink.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <form action="https://formspree.io/f/xdovnjpj" method="post" id="my-form">
+                <div class="form-group">
+                    <label for="firstName">firstName</label>
+                    <input type="text" id="firstName" name="firstName">
+                </div>
+        
+                <div class="form-group">
+                    <label for="lastName">lastName</label>
+                    <input type="text" id="lastName" name="lastName">
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="Email"> Email </label>
+                    <input type="text" id="Email" name="Email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">message</label>
+                    <textarea name="message" id="" cols="30" rows="7"></textarea>
+                </div>
+
+                <button type="submit" id="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+    
+
+    <!-- <script src="emaillink.js"></script> -->
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+        var form = document.getElementById("my-form");
+    var status = document.getElementById("status");
+    var sieht = document.getElementsByClassName()
+
+        function success() {  
+            form.reset();
+            status.classList.add('success');
+            status.innerHTML = "Thanks!";
+           }
+
+           function error() {  
+            form.reset();
+            status.classList.add('error');
+            status.innerHTML = "Oops There was a problem.";
+           } 
+
+           form.addEventListener("submit", function(ev) {
+            ev.preventDefault();
+            var data = new FormData(form);
+            ajax(form.method, form.action, data, success, error);
+           });    
+        });
+
+        function ajax(method, url, data, success, error){
+            var xhr = new   XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState !== XMLHttpRequest.DONE) return;
+                if(xhr.status === 200) {
+                        success(xhr.response, xhr.responseType);
+                    } else {
+                        error(xhr.status, xhr.response, xhr.responseType);
+                    }
+                };
+                xhr.send(data);
+            }
+           </script>
+           <script src="edyn.js"></script>
+           <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+       <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

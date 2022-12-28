@@ -1,0 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: candara;
+}
+
+body{
+    background-color: lightblue;
+}
+
+section{
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+}
+
+.container{
+    background: white;
+    padding: 10px 20px;
+    margin: 10px auto;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0px 0px 20px #00000010;
+}
+
+.form-group{
+    width: 100%;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 5px;
+    border: 2px solid rgba(128, 128, 128, 0.199);
+    border-radius: 5px;
+}
+
+textarea{
+    resize: vertical;
+}
+
+button[type="submit"]{
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .5s ease;
+
+}
+
+button[type="submit"]:hover{
+    background: rgb(214, 226, 236);
+}
+
+#status{
+    border-radius: 8px;
+    width: 90%;
+    max-width: 335px;
+    padding: 10px ;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#status.success{
+    background: lightgreen;
+    animation: status 4s ease forwards;
+}
+
+#status.error{
+    animation: status 4s ease forwards;
+    background: rgb(234, 89, 89);
+}
+
+@keyframes status {
+    0%{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    90%{
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100%{
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+img{
+    background: none;
+    color: red;
+    height: 100px;
+    width: 100px;
+    display: inline;
+    text-align: center;
+}
